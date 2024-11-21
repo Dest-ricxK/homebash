@@ -1,0 +1,94 @@
+/* Reseteo de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globales para el body */
+body {
+    background-color: #f0f8ff; /* Color de fondo suave */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden; /* Evita el desbordamiento */
+    position: relative;
+}
+
+/* Fondo con flores usando una imagen o un patrón (opcional) */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.w3schools.com/w3images/flowers.jpg') repeat; /* Cambia la URL por la imagen que quieras */
+    opacity: 0.1; /* Baja la opacidad para que no opaque el contenido */
+}
+
+/* Estilos para la carta */
+.carta {
+    background-color: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Ajusta el tamaño según el contenido */
+    max-width: 600px; /* Máximo ancho para que no sea demasiado grande */
+    position: relative;
+    animation: slideIn 1s ease-out; /* Animación al cargar */
+}
+
+/* Título */
+.carta h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2d3e50;
+    font-family: 'Georgia', serif;
+    animation: fadeIn 2s ease-in; /* Animación de entrada */
+}
+
+/* Párrafos de la carta */
+.carta p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 1.2rem;
+    color: #2d3e50;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    animation: fadeIn 3s ease-out; /* Animación de entrada para el footer */
+}
+
+/* Animación de aparición del texto */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animación de deslizamiento de la carta */
+@keyframes slideIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
