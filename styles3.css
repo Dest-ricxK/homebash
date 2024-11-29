@@ -1,0 +1,108 @@
+/* Restablece algunos márgenes y establece la fuente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Cuerpo de la página */
+body {
+    background-color: #f0f8ff; /* Color de fondo suave */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden; /* Evita el desbordamiento */
+    position: relative;
+}
+
+/* Fondo con flores usando una imagen o un patrón (opcional) */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.w3schools.com/w3images/flowers.jpg') repeat; /* Cambia la URL por la imagen que quieras */
+    opacity: 0.1; /* Baja la opacidad para que no opaque el contenido */
+}
+
+/* Contenedor principal del álbum */
+.carta {
+    background-color: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Ajusta el tamaño según el contenido */
+    max-width: 510px; /* Máximo ancho para que no sea demasiado grande */
+    position: relative;
+    animation: slideIn 1s ease-out; /* Animación al cargar */
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Título del álbum */
+.carta h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Estilo para las imágenes */
+.photo {
+    width: 140px;
+    height: 240px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para los videos */
+video {
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+video::before {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación de deslizamiento de la carta */
+@keyframes slideIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes floatHeart {
+    to {
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: floatHeart linear forwards;
+    z-index: -1;
+}
+
+footer {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}
